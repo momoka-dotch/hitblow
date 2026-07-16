@@ -10,6 +10,7 @@ from .core import judge, make_secret
 
 
 def play():
+    print("difficulty test")
     from .difficulty import select_difficulty
     digits = select_difficulty()
 
