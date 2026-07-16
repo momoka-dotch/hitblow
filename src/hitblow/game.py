@@ -18,6 +18,8 @@ def play():
     print(f"Hit & Blow（{digits} 桁・重複なし）")
 
     # ===== ① 開始時に足す（難易度・あいさつ など）: ここに書く =====
+    from .clear_time import start_timer
+    start_time = start_timer()
 
     tries = 0
     while True:
@@ -37,6 +39,9 @@ def play():
         if hit == digits:
 
             # ===== ③ 勝利時に足す（スコア・履歴 など）: ここに書く =====
+            from .clear_time import format_elapsed
+            elapsed = format_elapsed(start_time)
+            print(f"クリアタイム: {elapsed}")
 
             print(f"正解！ {tries} 回で当たり（答え {secret}）")
             break
