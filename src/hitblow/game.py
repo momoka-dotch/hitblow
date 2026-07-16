@@ -9,7 +9,7 @@
 from .core import judge, make_secret
 
 
-def play(digits=3):
+def play():
     from .difficulty import select_difficulty
     digits = select_difficulty()
 
