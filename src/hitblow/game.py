@@ -10,6 +10,9 @@ from .core import judge, make_secret
 
 
 def play(digits=3):
+    from .difficulty import select_difficulty
+    digits = select_difficulty()
+
     secret = make_secret(digits)
     print(f"Hit & Blow（{digits} 桁・重複なし）")
 
