@@ -22,6 +22,7 @@ def play():
     start_time = start_timer()
 
     tries = 0
+    bot_history = []
     while True:
         guess = input("予想 > ").strip()
 
@@ -50,4 +51,13 @@ def play():
             print(f"クリアタイム: {elapsed}")
 
             print(f"正解！ {tries} 回で当たり（答え {secret}）")
+            break
+
+        from .bot import bot_guess
+        bg = bot_guess(digits, bot_history, difficulty=digits - 2)
+        bhit, bblow = judge(secret, bg)
+        bot_history.append((bg, bhit, bblow))
+        print(f"  相手: {bg}  Hit={bhit}  Blow={bblow}")
+        if bhit == digits:
+            print(f"ボットの勝ち… {len(bot_history)} 回で当たられた（答え {secret}）")
             break
