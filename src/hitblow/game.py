@@ -59,5 +59,5 @@ def play():
         bot_history.append((bg, bhit, bblow))
         print(f"  相手: {bg}  Hit={bhit}  Blow={bblow}")
         if bhit == digits:
-            print(f"ボットの勝ち… {len(bot_history)} 回で当たられた（答え {secret}）")
+            print(f"相手の勝ち… {len(bot_history)} 回で当たられた（答え {secret}）")
             break
