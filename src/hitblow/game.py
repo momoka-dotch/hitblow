@@ -23,6 +23,7 @@ def play():
 
     tries = 0
     bot_history = []
+    hinted_indices = set()
     while True:
         guess = input("予想 > ").strip()
 
@@ -34,7 +35,7 @@ def play():
         from .hint import hint
 
         if guess.lower() == "hint":
-            print(hint(secret))
+            print(hint(secret, hinted_indices))
             continue
 
         if len(guess) != digits or not guess.isdigit():

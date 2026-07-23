@@ -6,7 +6,7 @@ def select_difficulty():
         print("1 : 易しい（3桁）")
         print("2 : 普通（4桁）")
         print("3 : 難しい（5桁）")
-
+        print("（'hint' でヒントが見られます）")
         choice = input("番号 > ").strip()
 
         if choice == "1":
